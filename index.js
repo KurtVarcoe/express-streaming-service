@@ -7,3 +7,7 @@ const genre = [
     { id: 3, genre: genre3 },
     { id: 4, genre: genre4 }
 ];
+
+
+const port = env.PORT || 3000;
+app.listen(port);
