@@ -9,5 +9,10 @@ const genre = [
 ];
 
 
+app.get('/api/genres/', (res, req) => {
+    res.read(genre);
+    res.end();
+});
+
 const port = env.PORT || 3000;
 app.listen(port);
