@@ -20,7 +20,7 @@ app.get('/api/genres/:id', (req, res) => {
     res.send(genre);
 });
 
-app.post('api/genres', (req,res) => {
+app.post('/api/genres', (req,res) => {
     const genre = {
         id: genres.length + 1,
         name: req.body.name 
