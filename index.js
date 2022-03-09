@@ -39,8 +39,9 @@ app.put('/api/genres/:id', (req, res) => {
 app.delete('/api/genres/:id', (req, res) => {
     const genre = genres.find(c => c.id === parseInt(req.params.id));
     if(!genre) res.status(404).send('The genre with the given ID could not be found');
-    genre = {};
-    res.send("Genre was deleted");
+    const index = genres.indexOf(genre);
+    genres.splice(index, 1);
+    res.send(genre);
 });
 
 const port = process.env.PORT || 3000;
