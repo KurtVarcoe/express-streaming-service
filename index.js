@@ -32,9 +32,7 @@ app.post('/api/genres', (req,res) => {
 app.put('/api/genres/:id', (req, res) => {
     const genre = genres.find(c => c.id === parseInt(req.params.id));
     if(!genre) res.status(404).send('The genre with the given ID could not be found');
-    genre = {
-        name: req.body.name
-    };
+    genre.name = req.body.name;
     res.send(genre);
 });
 
