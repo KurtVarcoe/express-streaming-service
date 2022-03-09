@@ -29,5 +29,16 @@ app.post('/api/genres', (req,res) => {
     res.send(genre);
 });
 
+app.put('/api/genres/:id', (req, res) => {
+    const genre = genres.find(c => c.id === parseInt(req.params.id));
+    if(!genre) res.status(404).send('The genre with the given ID could not be found');
+    genre = {
+        name: req.body.name
+    };
+    res.send(genre);
+});
+
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port: ${port}`));
